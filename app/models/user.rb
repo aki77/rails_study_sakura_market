@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
   validates :nickname, presence: true, length: { maximum: 20 }
 
   attachment :profile_image, type: :image
+
+  has_many :diaries, dependent: :destroy
 end

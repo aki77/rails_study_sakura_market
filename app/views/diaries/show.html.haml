@@ -1,0 +1,6 @@
+%h1= @diary.title
+
+- if @diary.diary_image.present?
+  = image_tag attachment_url(@diary, :diary_image, :fit, 300, 300, format: 'jpg')
+
+%p= simple_format(@diary.body)

@@ -1,4 +1,5 @@
 - if signed_in?
+  %li= link_to '日記を書く', new_diary_path
   %li.dropdown#fat-menu
     %a.dropdown-toggle{ 'data-toggle' => 'dropdown', :href => '#' }
       = current_user.nickname
