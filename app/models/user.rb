@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :nickname, presence: true, length: { maximum: 20 }
+
+  attachment :profile_image, type: :image
 end
