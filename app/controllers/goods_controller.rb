@@ -20,10 +20,4 @@ class GoodsController < ApplicationController
       format.js
     end
   end
-
-  private
-
-    def set_diary
-      @diary = Diary.find(params[:diary_id])
-    end
 end

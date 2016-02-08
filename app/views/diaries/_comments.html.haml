@@ -1,0 +1,4 @@
+- if diary.comments.exists?
+  %h2 この投稿へのコメント
+
+  = render diary.comments.order(:id).includes(:user)

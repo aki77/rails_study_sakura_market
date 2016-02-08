@@ -10,4 +10,5 @@ class User < ActiveRecord::Base
 
   has_many :diaries, dependent: :destroy
   has_many :goods, dependent: :destroy
+  has_many :comments, dependent: :destroy
 end

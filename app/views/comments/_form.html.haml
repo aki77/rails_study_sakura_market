@@ -1,0 +1,9 @@
+%h3 コメントを投稿する
+
+= simple_form_for([diary, diary.comments.build(user: current_user)]) do |f|
+
+  .form-inputs
+    = f.input :body, label: false
+
+  .form-actions
+    = f.button :submit

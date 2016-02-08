@@ -1,0 +1,6 @@
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title
+      = comment.user.nickname
+  .panel-body
+    %p= simple_format(comment.body)

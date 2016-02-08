@@ -17,4 +17,10 @@ class ApplicationController < ActionController::Base
       devise_parameter_sanitizer.for(:sign_up) << :nickname
       devise_parameter_sanitizer.for(:account_update) << :nickname << :profile_image << :remove_profile_image
     end
+
+  private
+
+    def set_diary
+      @diary = Diary.find(params[:diary_id])
+    end
 end
