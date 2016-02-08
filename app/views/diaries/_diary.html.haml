@@ -1,0 +1,8 @@
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title
+      = link_to diary.title, diary
+      by #{diary.user.nickname}
+      = l(diary.created_at)
+  .panel-body
+    %p= simple_format(diary.body)
