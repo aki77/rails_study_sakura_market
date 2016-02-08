@@ -1,4 +1,4 @@
-%h3 コメントを投稿する
+%h3#comment-form コメントを投稿する
 
 = simple_form_for([diary, diary.comments.build(user: current_user)]) do |f|
 

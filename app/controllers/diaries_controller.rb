@@ -3,7 +3,7 @@ class DiariesController < ApplicationController
   before_action :authenticate_user!, only: %i(new edit create update destroy)
 
   def index
-    @diaries = Diary.page(params[:page])
+    @diaries = Diary.page(params[:page]).order(id: :desc).includes(:user)
   end
 
   def show

@@ -37,6 +37,7 @@ group :development do
   gem 'meta_request'
   gem 'rails_layout'
   gem 'view_source_map'
+  gem 'letter_opener_web'
 end
 
 group :production do

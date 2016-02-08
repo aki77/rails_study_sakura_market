@@ -4,6 +4,7 @@ class GoodsController < ApplicationController
 
   def create
     @good = @diary.goods.create!(user: current_user)
+    DiaryMailer.good_email(@good).deliver_later
 
     respond_to do |format|
       format.html { redirect_to @diary, notice: 'Good!を付けました。' }

@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
     @comment.user = current_user
 
     if @comment.save
+      DiaryMailer.comment_email(@comment).deliver_later
       flash[:notice] = 'コメントを投稿しました。'
     else
       flash[:alert] = 'コメントの投稿に失敗しました。'
