@@ -1,0 +1,14 @@
+%h1= @user.nickname
+
+%table.table.table-bordered
+  %tbody
+    %tr
+      %th プロフィール画像
+      %td= image_tag attachment_url(@user, :profile_image, :fit, 300, 300, format: 'jpg')
+    %tr
+      %th メールアドレス
+      %td= @user.email
+
+= link_to '編集', edit_admin_user_path(@user)
+\|
+= link_to '一覧に戻る', admin_users_path

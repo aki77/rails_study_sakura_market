@@ -1,0 +1,12 @@
+= simple_form_for([:admin, @user]) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :email
+    = f.input :nickname
+    = f.input :profile_image, as: :attachment
+    - if @user.profile_image.present?
+      = f.input :remove_profile_image, as: :boolean
+
+  .form-actions
+    = f.button :submit
