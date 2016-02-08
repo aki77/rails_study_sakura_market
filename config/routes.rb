@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :diaries, only: %i(show new create edit update destroy)
+  resources :goods
+  resources :diaries, only: %i(show new create edit update destroy) do
+    resource :good, only: %i(create destroy)
+  end
 
   root 'diaries#index'
 

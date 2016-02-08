@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
   attachment :profile_image, type: :image
 
   has_many :diaries, dependent: :destroy
+  has_many :goods, dependent: :destroy
 end
