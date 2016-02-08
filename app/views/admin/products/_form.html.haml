@@ -1,0 +1,15 @@
+= simple_form_for([:admin, @product]) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :product_image, as: :attachment
+    - if @product.product_image.present?
+      = f.input :remove_product_image, as: :boolean
+    = f.input :price
+    = f.input :description
+    = f.input :hidden
+    = f.input :order
+
+  .form-actions
+    = f.button :submit

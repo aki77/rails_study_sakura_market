@@ -18,6 +18,7 @@ gem 'rambulance'
 gem 'meta-tags'
 gem 'refile', require: ['refile/rails', 'refile/simple_form']
 gem 'refile-mini_magick'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug'

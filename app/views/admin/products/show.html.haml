@@ -1,0 +1,23 @@
+%h1= @product.name
+
+%table.table.table-bordered
+  %tbody
+    %tr
+      %th 商品画像
+      %td= image_tag attachment_url(@product, :product_image, :fit, 300, 300, format: 'jpg')
+    %tr
+      %th 価格
+      %td= @product.price
+    %tr
+      %th 説明
+      %td= simple_format(@product.description)
+    %tr
+      %th 非表示フラグ
+      %td= @product.hidden
+    %tr
+      %th 表示順
+      %td= @product.order
+
+= link_to '編集', edit_admin_product_path(@product)
+\|
+= link_to '一覧に戻る', admin_products_path

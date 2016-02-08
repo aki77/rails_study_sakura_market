@@ -1,0 +1,25 @@
+%h1 商品一覧
+
+%table.table
+  %thead
+    %tr
+      %th 商品名
+      %th 価格
+      %th 説明文
+      %th 非表示フラグ
+      %th 表示順
+
+  %tbody
+    - @products.each do |product|
+      %tr
+        %td= link_to product.name, [:admin, product]
+        %td= product.price
+        %td= product.description
+        %td= product.hidden
+        %td= product.order
+        %td= link_to '編集', edit_admin_product_path(product)
+        %td= link_to '削除', [:admin, product], method: :delete, data: { confirm: '本当に削除してもよろしいですか?' }
+
+%br
+
+= link_to '商品を登録する', new_admin_product_path
