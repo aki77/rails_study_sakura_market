@@ -9,6 +9,7 @@ class Admin::UsersController < Admin::AdminController
   end
 
   def edit
+    @user.build_destination unless @user.destination.present?
   end
 
   def update

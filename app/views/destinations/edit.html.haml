@@ -1,0 +1,7 @@
+%h1 送付先情報を編集
+
+= render 'form'
+
+= button_to('送付先情報を削除', @destination, method: :delete,
+                                              class: 'btn btn-lg btn-danger',
+                                              data: { confirm: '本当に削除してもよろしいですか？' })
