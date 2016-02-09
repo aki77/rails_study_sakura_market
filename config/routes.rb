@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     resources :comments, only: %i(create destroy)
   end
 
-  resources :products, only: %i(index show)
+  resources :products, only: %i(index show) do
+    resources :line_items, only: %i(create)
+  end
 
   namespace :admin do
     resources :products
@@ -12,6 +14,7 @@ Rails.application.routes.draw do
   end
 
   resource :destination, only: %i(new create edit update destroy)
+  resource :cart, only: %i(show destroy)
 
   root 'diaries#index'
 

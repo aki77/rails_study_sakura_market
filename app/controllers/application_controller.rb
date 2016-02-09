@@ -23,4 +23,12 @@ class ApplicationController < ActionController::Base
     def set_diary
       @diary = Diary.find(params[:diary_id])
     end
+
+    def set_cart
+      @cart = Cart.find_by(id: session[:cart_id]) if session[:cart_id].present?
+      unless @cart
+        @cart = Cart.create!
+        session[:cart_id] = @cart.id
+      end
+    end
 end

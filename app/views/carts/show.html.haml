@@ -1,0 +1,6 @@
+%h1 ショッピングカート
+
+- if @cart.line_items.exists?
+  = render @cart
+- else
+  %p お客様のショッピングカートに商品はありません。

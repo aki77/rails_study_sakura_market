@@ -1,3 +1,5 @@
 %h1= @product.name
 
 %p= @product.description
+
+= button_to('カートに追加', product_line_items_path(@product))
