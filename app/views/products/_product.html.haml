@@ -1,0 +1,8 @@
+.panel.panel-default
+  .panel-heading
+    %h3.panel-title
+      = link_to product.name, product
+  .panel-body
+    - if product.product_image.present?
+      %p= image_tag attachment_url(product, :product_image, :fit, 300, 300, format: 'jpg')
+    %p= simple_format(product.description)

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     resources :comments, only: %i(create destroy)
   end
 
+  resources :products, only: %i(index show)
+
   namespace :admin do
     resources :products
     resources :users, only: %i(index show edit update destroy)
