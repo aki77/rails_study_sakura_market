@@ -2,4 +2,8 @@
 
 = render @cart
 
+%dl
+  %dt 代引き手数料
+  %dd= number_to_currency(@cart.cod_fee)
+
 = render 'orders/form'
