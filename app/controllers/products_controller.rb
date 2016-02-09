@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i(show)
 
   def index
-    @products = Product.page(params[:page]).order(:order)
+    @products = Product.visible.page(params[:page]).order(:order)
   end
 
   def show
@@ -11,6 +11,6 @@ class ProductsController < ApplicationController
   private
 
     def set_product
-      @product = Product.find(params[:id])
+      @product = Product.visible.find(params[:id])
     end
 end

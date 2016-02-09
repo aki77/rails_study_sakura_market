@@ -1,0 +1,10 @@
+ja:
+  enums:
+    order:
+      delivery_time:
+        am8: 8-12時
+        pm0: 12-14時
+        pm2: 14-16時
+        pm4: 16-18時
+        pm6: 18-20時
+        pm8: 20-21時

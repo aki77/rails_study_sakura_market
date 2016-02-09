@@ -19,6 +19,7 @@ gem 'meta-tags'
 gem 'refile', require: ['refile/rails', 'refile/simple_form']
 gem 'refile-mini_magick'
 gem 'dotenv-rails'
+gem 'enum_help'
 
 group :development, :test do
   gem 'byebug'

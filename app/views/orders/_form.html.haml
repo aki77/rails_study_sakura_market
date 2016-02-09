@@ -1,0 +1,9 @@
+= simple_form_for(@order) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :delivery_date
+    = f.input :delivery_time
+
+  .form-actions
+    = f.button :submit, '注文を確定する', class: 'btn btn-primary btn-lg'

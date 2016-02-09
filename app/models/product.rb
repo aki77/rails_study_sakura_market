@@ -6,4 +6,6 @@ class Product < ActiveRecord::Base
                     presence: true
   validates :description, presence: true
   validates :order, presence: true
+
+  scope :visible, -> { where(hidden: false) }
 end

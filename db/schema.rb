@@ -62,9 +62,11 @@ ActiveRecord::Schema.define(version: 20160209060025) do
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer  "user_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "user_id",       null: false
+    t.date     "delivery_date", null: false
+    t.integer  "delivery_time", null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "products", force: :cascade do |t|
