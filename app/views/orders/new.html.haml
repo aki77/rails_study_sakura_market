@@ -5,5 +5,7 @@
 %dl
   %dt 代引き手数料
   %dd= number_to_currency(@cart.cod_fee)
+  %dt 送料
+  %dd= number_to_currency(@cart.delivery_charge)
 
 = render 'orders/form'

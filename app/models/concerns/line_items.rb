@@ -9,7 +9,7 @@ module LineItems
     end
 
     def total_items
-      line_items.sum(:quantity)
+      line_items.to_a.sum(&:quantity)
     end
 
     def cod_fee
@@ -23,6 +23,10 @@ module LineItems
       else
         1000
       end
+    end
+
+    def delivery_charge
+      total_items.fdiv(5).ceil * 600
     end
   end
 end
