@@ -21,6 +21,7 @@ gem 'refile-mini_magick'
 gem 'dotenv-rails'
 gem 'enum_help'
 gem 'business_time'
+gem 'faker'
 
 group :development, :test do
   gem 'byebug'
@@ -41,7 +42,6 @@ group :development do
   gem 'rails_layout'
   gem 'view_source_map'
   gem 'letter_opener_web'
-  gem 'faker'
 end
 
 group :production do
