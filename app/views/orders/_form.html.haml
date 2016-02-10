@@ -2,7 +2,7 @@
   = f.error_notification
 
   .form-inputs
-    = f.input :delivery_date
+    = f.input :delivery_days, as: :select, collection: delivery_days_collection
     = f.input :delivery_time
 
   .form-actions

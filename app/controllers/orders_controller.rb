@@ -36,6 +36,6 @@ class OrdersController < ApplicationController
     end
 
     def order_params
-      params.require(:order).permit(:delivery_date, :delivery_time)
+      params.require(:order).permit(:delivery_days, :delivery_time)
     end
 end
