@@ -5,7 +5,7 @@
       %th 数量
       %th 価格
   %tbody
-    = render cart.line_items
+    = render cart.line_items.includes(:product)
   %tfoot
     %tr
       %th{ colspan: 2 } 合計金額

@@ -2,4 +2,8 @@
 
 %p= @product.description
 
+%dl
+  %dt 価格
+  %dd= number_to_currency(@product.price)
+
 = button_to('カートに追加', product_line_items_path(@product))

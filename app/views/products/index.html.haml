@@ -1,5 +1,5 @@
 %h1 商品一覧
 
-= render @products
+= render @products if @products.present?
 
 .text-center= paginate @products

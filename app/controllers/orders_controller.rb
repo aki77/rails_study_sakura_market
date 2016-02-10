@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
   before_action :has_destination?, only: %i(new create)
 
   def index
-    @orders = current_user.orders.page(params[:page]).order(id: :desc).includes(:line_items)
+    @orders = current_user.orders.page(params[:page]).order(id: :desc).includes(line_items: :product)
   end
 
   def new

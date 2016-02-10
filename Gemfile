@@ -41,6 +41,7 @@ group :development do
   gem 'rails_layout'
   gem 'view_source_map'
   gem 'letter_opener_web'
+  gem 'faker'
 end
 
 group :production do
