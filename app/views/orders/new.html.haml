@@ -7,5 +7,7 @@
   %dd= number_to_currency(@cart.cod_fee)
   %dt 送料
   %dd= number_to_currency(@cart.delivery_charge)
+  %dt 請求額
+  %dd= number_to_currency(@cart.billing_amount_with_tax)
 
 = render 'orders/form'

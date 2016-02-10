@@ -1,6 +1,8 @@
 module LineItems
   extend ActiveSupport::Concern
 
+  TAX_RATE = 0.08
+
   included do
     has_many :line_items, dependent: :destroy
 
@@ -27,6 +29,18 @@ module LineItems
 
     def delivery_charge
       total_items.fdiv(5).ceil * 600
+    end
+
+    def billing_tax
+      (billing_amount * TAX_RATE.to_r).floor
+    end
+
+    def billing_amount
+      total_price + delivery_charge + cod_fee
+    end
+
+    def billing_amount_with_tax
+      billing_amount + billing_tax
     end
   end
 end
