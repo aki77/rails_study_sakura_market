@@ -14,6 +14,8 @@ module LineItems
       line_items.to_a.sum(&:quantity)
     end
 
+    # FIXME: CartとOrderの分け方がなんかスッキリしない
+
     def cod_fee
       case total_price
       when 0...10000
