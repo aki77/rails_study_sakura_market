@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :users, only: %i(index show edit update destroy)
   end
 
-  resources :orders, only: %i(new create)
+  resources :orders, only: %i(new create index)
 
   resource :destination, only: %i(new create edit update destroy)
   resource :cart, only: %i(show destroy)
