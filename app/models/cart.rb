@@ -11,4 +11,8 @@ class Cart < ActiveRecord::Base
     end
     current_item
   end
+
+  def remove_product(product)
+    line_items.find_by(product: product)&.destroy
+  end
 end

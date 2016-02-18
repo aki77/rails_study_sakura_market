@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
 
   resources :products, only: %i(index show) do
-    resources :line_items, only: %i(create)
+    resource :line_item, only: %i(create destroy)
   end
 
   namespace :admin do

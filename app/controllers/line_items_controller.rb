@@ -1,5 +1,5 @@
 class LineItemsController < ApplicationController
-  before_action :set_product, only: %i(create)
+  before_action :set_product
 
   def create
     @line_item = @cart.add_product(@product)
@@ -11,6 +11,11 @@ class LineItemsController < ApplicationController
         format.html { redirect_to @product, alert: 'カートに追加できませんでした。' }
       end
     end
+  end
+
+  def destroy
+    @cart.remove_product(@product)
+    redirect_to cart_path
   end
 
   private
