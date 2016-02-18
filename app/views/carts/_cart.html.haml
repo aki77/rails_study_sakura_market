@@ -2,8 +2,8 @@
   %thead
     %tr
       %th 商品名
+      %th 価格(税抜)
       %th 数量
-      %th 価格
       %th 削除
   %tbody
     = render cart.line_items.includes(:product)

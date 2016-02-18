@@ -1,5 +1,5 @@
 %tr
   %td= link_to line_item.product.name, line_item.product
-  %td= line_item.quantity
   %td= number_to_currency(line_item.product.price)
+  %td= select_tag 'line_item_quantity', options_for_select(1..30, selected: line_item.quantity), class: 'js-line-item-quantity', data: { url: product_line_item_path(line_item.product) }
   %td= link_to '削除', product_line_item_path(line_item.product), class: 'btn btn-warning', method: :delete
