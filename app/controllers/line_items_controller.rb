@@ -1,5 +1,4 @@
 class LineItemsController < ApplicationController
-  before_action :set_cart, only: %i(create)
   before_action :set_product, only: %i(create)
 
   def create

@@ -1,6 +1,5 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_cart
   before_action :has_line_items?, only: %i(new create)
   before_action :has_destination?, only: %i(new create)
 
