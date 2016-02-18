@@ -7,7 +7,7 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @product, notice: 'カートに追加しました。' }
+        format.html { redirect_to cart_url, notice: 'カートに追加しました。' }
       else
         format.html { redirect_to @product, alert: 'カートに追加できませんでした。' }
       end
