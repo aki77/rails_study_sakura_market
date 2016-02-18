@@ -3,7 +3,7 @@
 %li
   = link_to cart_path do
     ショッピングカート
-    %span.badge= @cart.total_items if @cart.total_items.present?
+    %span.badge= @cart.total_items if @cart.total_items > 0
 
 - if signed_in?
   %li.dropdown#fat-menu
