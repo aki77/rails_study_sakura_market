@@ -3,7 +3,8 @@ class LineItemsController < ApplicationController
   before_action :set_line_item, only: %i(update)
 
   def create
-    @line_item = @cart.add_product(@product)
+    # FIXME: quantityパラメータが無い場合に500エラーになりそう
+    @line_item = @cart.add_product(@product, line_item_params[:quantity])
 
     respond_to do |format|
       if @line_item.save

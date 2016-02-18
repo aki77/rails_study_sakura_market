@@ -1,14 +1,9 @@
 class Cart < ActiveRecord::Base
   include LineItems
 
-  def add_product(product)
-    current_item = line_items.where(product: product).first
-    if current_item
-      current_item.quantity += 1
-    else
-      current_item = line_items.build(product: product)
-      line_items << current_item
-    end
+  def add_product(product, quantity)
+    current_item = line_items.find_or_initialize_by(product: product)
+    current_item.quantity += quantity.to_i
     current_item
   end
 
