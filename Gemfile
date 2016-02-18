@@ -22,6 +22,7 @@ gem 'dotenv-rails'
 gem 'enum_help'
 gem 'business_time'
 gem 'faker'
+gem 'ransack'
 
 group :development, :test do
   gem 'byebug'

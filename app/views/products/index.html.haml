@@ -1,5 +1,15 @@
 %h1 商品一覧
 
+-# これは使いにくい
+-# = search_form_for @q, url: products_url do |f|
+-#   .field
+-#     並び替え:
+-#     = f.sort_fields do |s|
+-#       = s.sort_select
+
+-# FIXME 現在の選択項目が引き継がれない
+= select_tag 'sorts', options_for_select(Product::SORTS.invert), id: 'js-sorts', data: { url: products_url }
+
 = render @products if @products.present?
 
 .text-center= paginate @products

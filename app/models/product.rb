@@ -8,4 +8,12 @@ class Product < ActiveRecord::Base
   validates :order, presence: true
 
   scope :visible, -> { where(hidden: false) }
+
+  SORTS = {
+    'order asc'       => 'おすすめ順',
+    'created_at desc' => '新着順',
+    'created_at asc'  => '古い順',
+    'price asc'       => '金額の安い順',
+    'price desc'      => '金額の高い順',
+  }.freeze
 end
