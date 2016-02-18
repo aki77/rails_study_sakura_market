@@ -1,4 +1,4 @@
-%h1 ショッピングカート
+= render 'orders/wizard', step: 1
 
 - if @cart.line_items.exists?
   = render @cart
