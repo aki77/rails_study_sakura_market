@@ -8,3 +8,8 @@ ja:
         pm4: 16-18時
         pm6: 18-20時
         pm8: 20-21時
+  simple_form:
+    labels:
+      order:
+        delivery_days: 配達日
+        delivery_time: 配達時間帯
