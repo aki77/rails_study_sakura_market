@@ -1,8 +1,8 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_cart
   before_action :has_line_items?, only: %i(new create)
   before_action :has_destination?, only: %i(new create)
+  before_action :set_order, only: %i(complete)
 
   def index
     @orders = current_user.orders.page(params[:page]).order(id: :desc).includes(line_items: :product)
@@ -12,6 +12,9 @@ class OrdersController < ApplicationController
     @order = current_user.orders.build
   end
 
+  def complete
+  end
+
   def create
     @order = current_user.orders.build(order_params)
     @order.add_line_items_from_cart(@cart)
@@ -19,7 +22,7 @@ class OrdersController < ApplicationController
     if @order.save
       Cart.destroy(session[:cart_id])
       session[:cart_id] = nil
-      redirect_to root_url, notice: '注文を確定しました。'
+      redirect_to complete_order_url(@order)
     else
       render :new
     end
@@ -37,6 +40,10 @@ class OrdersController < ApplicationController
       unless current_user.destination.present?
         redirect_to new_destination_url, alert: '送付先情報を登録してください。'
       end
+    end
+
+    def set_order
+      @order = current_user.orders.find(params[:id])
     end
 
     def order_params

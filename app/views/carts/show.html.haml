@@ -1,7 +1,7 @@
-%h1 ショッピングカート
+= render 'orders/wizard', step: 1
 
 - if @cart.line_items.exists?
   = render @cart
-  = link_to 'レジに進む', new_order_path, class: 'btn btn-primary btn-lg'
+  = link_to 'レジに進む', new_order_path, class: 'btn btn-primary btn-lg pull-right'
 - else
   %p お客様のショッピングカートに商品はありません。

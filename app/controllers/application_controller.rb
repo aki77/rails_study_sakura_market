@@ -3,13 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  class Forbidden < ActionController::ActionControllerError; end
-
-  def render_access_forbidden
-    raise ApplicationController::Forbidden
-  end
-
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_cart
 
   protected
 

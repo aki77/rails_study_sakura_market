@@ -2,7 +2,9 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i(show)
 
   def index
-    @products = Product.visible.page(params[:page]).order(:order)
+    @q = Product.search(params[:q])
+    @q.sorts = 'order asc' if @q.sorts.empty?
+    @products = @q.result.visible.page(params[:page])
   end
 
   def show
